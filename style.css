@@ -1,0 +1,155 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    background-color: #7FFFD4;
+}
+
+#map {
+    background:	#7FFFD4;
+    height: 100%;
+    position: relative;
+}
+
+.box{
+    width: 100%;
+    
+}
+
+.searchBar{
+    Display: flex;
+}
+
+#enterDiv{
+    flex: 70%;
+    margin-right: 10px;
+}
+
+#subDiv{
+    flex: 30%;
+}
+
+.enterDivBox{
+    width:100%;
+    
+}
+
+#checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* #enterDestination{
+   display: none;
+}
+
+#findClosestFacility{
+    display: none;
+}  */
+
+#search-container {
+    text-align: center;
+    margin-top: 50px;
+}
+  
+#search-box {
+    padding: 10px;
+    width: 300px;
+}
+  
+#reader {
+    display: none;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    
+}
+
+#closeQR{
+    display: none;
+    width: 100%;
+    
+}
+
+#currentLNQR{
+    Display: flex;
+}
+#CurrentL{
+    flex: 75%;
+}
+
+#currentLocation{
+    width: 100%;
+}
+
+#QRButton{
+    flex: 15%;
+}
+
+#QRB{
+    display: block;
+    width: 100%;
+    
+}
+
+#chooseDestination{
+    display: block;
+}
+
+#enterDestination{
+    display: none;
+}
+
+#showEnterLocBox{
+    display: none;
+}
+
+#showFacLocBox{
+    display: none;
+}
+
+#selectFac{
+    width: 100%;
+}
+
+#position{
+    top: 65px;
+    display: flex;
+    justify-content: center;
+    background-color: #046932;
+    color:#ffffff;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    margin-top: 5px;
+    border-radius: 100px;
+    opacity: 0.5;
+}
+.sticky-div {
+    position: fixed;
+    
+    width: 100%;
+    background-color:#7FFFD4;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* You can adjust the z-index based on your needs */
+  
+}
+
+#currentPosition{
+    text-align: center;
+    height: min-content;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+

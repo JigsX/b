@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UC INTERACTIVE MAP</title>
+        <link rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script
+            src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
+        <httpprotocol>
+            <customheaders>
+                <add name="Feature-Policy"
+                    value="accelerometer 'none'; camera *; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment *; usb 'none'" />
+            </customheaders>
+        </httpprotocol>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.4/html5-qrcode.min.js"
+            integrity="sha512-k/KAe4Yff9EUdYI5/IAHlwUswqeipP+Cp5qnrsUjTPCgl51La2/JhyyjNciztD7mWNKLSXci48m7cctATKfLlQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </head>
+    <body>
+        <div id="reader"></div>
+            <div class="sticky-div">
+                
+                
+                    
+                </div id="UI">
+
+
+                <div id="chooseDestination" class="sticky-div">
+                    <button class="box" id="enterDest" onclick="showEnterLocBox()">Enter Destination</button>
+                    <br>
+                    <button class="box" id="enterFac" onclick="showEnterFacBox()">Find Closest Facility</button>
+                </div>
+    
+                <div id="enterDestination" class="sticky-div">
+                    <form id="formInputs">
+                        <div class="searchBar">
+                            <div id="enterDiv">
+                                <div  class="enterDivBox">
+                                    <div id="currentLNQR">
+                                        <span id = "CurrentL">
+                                            <input type="text" id="currentLocation" 
+                                            placeholder="Enter Current Campus Location" onclick="suggestLocation(this.id)"/>
+                                        </span>
+                                       <span id="QRButton">
+                                        <button id="QRB" type="button" onclick="showPopup()"> QR </button>
+                                        <button  id="closeQR" type="button" onclick="hidePopup()">Exit</button>
+                                       </span>
+                                    </div>
+                                    
+                                    <div id="suggestions-container-current"></div>
+                                </div>
+                                
+                                <div id="showEnterLocBox">
+                                    <input type="text"  class="enterDivBox"  id="destinationLocation"
+                                    placeholder="Enter Destination" onclick="suggestLocation(this.id)" />
+                                    <div id="suggestions-container-destination"></div>
+                                </div>
+
+                                <div id="showFacLocBox">
+                                    <select id="selectFac">
+                                        <option>Select Facility</option>
+                                        <option>cr</option>
+                                        <option>Gymnasium</option>
+                                        <option>test</option>
+                                        <option>test</option>
+                                    </select>
+                                </div>
+
+                            </div>
+        
+                            <div id="subDiv">
+                                <div id="checkbox">
+                                    <label >
+                                        <image src="./elevatorLogo.png"  width="15" height="15"></image>
+                                        <input type="checkbox" id="useElevator"> 
+                                        
+                                    </label>
+        
+                                    <label>
+                                        <image src="./emergencyExit.png"  width="15" height="15"></image>
+                                        <input type="checkbox" id="useEmerExit">
+                                        
+                                    </label>
+                                </div>
+                                <button class="box">Locate</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+
+                
+            </div>
+        
+        <div id="map">
+           
+           
+            <div id="position" class="sticky-div"> 
+                <h3 id="currentPosition" ></h3>
+            </div>
+        </div>
+        <script src="algorithm.js"></script>
+        <script src="Map.js"></script>
+        <script src="facilitiesList.js"></script>
+        <script src="qrScanner.js"></script>
+        <script src="searchBar.js"></script>
+        <script src="roomNodes.js"></script>
+        <script src="sdd.js"></script>
+
+    </body>
+</html>
